@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+
+.title{
+    color: black;
+    display: flex;
+    justify-content: center;
+
+}
+
+.choice{
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+}
+
+.인증{
+    background-color: coral;
+}
+
+.phonenumber{
+    background-color: cornflowerblue;
+}
+
+.inputes{
+    height: 200px;
+    width: 600px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 300px;
+}
+
+.no{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>타이머</title>
+    <script>
+
+        let isStarted = false
+        // 위의 let isStarted를 function안에 넣게 될 시에는 반복되어 실행될 수 있어 꼭 밖으로 꺼내놔야 한다.
+        
+        function getToken(){
+
+            if(isStarted===false){ isStarted = true
+
+            const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+            document.getElementById("aaa").innerText = token
+
+            let time = 179
+            setInterval(function(){
+                if(time >= 0){
+                    const minutes = String(Math.floor(time / 60)).padStart(2,"0!")
+                    const seconds = String(time % 60).padStart(2,"0!")
+                    document.getElementById("qqq").innerText =  minutes + ":" + seconds
+                    time = time - 1
+                } 
+            }, 1000)
+
+            } else { alert("이미 실행되었습니다!")}
+        }
+    
+    </script>
+</head>
+<body>
+    <span id="aaa">000000</span><button onclick="getToken()">인증번호전송</button><br />
+    <span id="qqq">03:00</span><button disabled>인증완료</button>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>이벤트감지</title>
+    <script>
+        function checkValidation(){
+            const email = document.getElementById("email").value
+            const password1 = document.getElementById("password1").value
+            const password2 = document.getElementById("password2").value
+
+            if(email !== "" && password1 !== "" && password2 !== ""){
+                document.getElementById("mybutton").setAttribute("style", "background-color: yellow")
+            } else {
+                document.getElementById("mybutton").removeAttribute("style")
+                //document.getElementById("mybutton").setAttribute("style", "background-color: none")도 가능
+            } 
+            // mybutton의 스타일 속성의 백그라운드 색을 노랑으로 바꾸는 식이다.
+            // !==는 같지 않다라는 말이다. &&는 그리고라는 의미이다.(=and) [같다는 의미는 ===]
+            // removeAttribute는 속성바꾼것(전체)을 지운다는 의미이다.
+            // none은 배경색만 지우는 것이라서 더 유용하다.
+        }
+    </script>
+</head>
+<body>
+    <input id="email" type="text" placeholder="이메일을 입력해 주세요." oninput="checkValidation()"/><br />
+    <input id="password1" type="password" placeholder="비밀번호를 입력해주세요." oninput="checkValidation()"/><br />
+    <input id="password2" type="password" placeholder="비밀번호를 확인해주세요." onchange="checkValidation()" onkeyup="onchange()"/> <br />
+    <!-- = <input id="password2" type="password" placeholder="비밀번호를 확인해주세요." oninput="aaa()"/> <br /> 으로 바꿔도 실행이 가능하다. -->
+    <!-- 비밀번호확인에 변화가 있으면 aaa기능이 사용된다. onkeyup은 키보드에서 손을 때었을때 변화를 주라는 것이다.(이러면 클릭을 하지않아도 비밀번호 확인란에서 입력하고 키보드에서 손을 때면 회원가입 버튼이 바뀐다.)-->
+    <button id="mybutton">회원가입</button>
+</body>
+</html>

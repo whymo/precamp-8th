@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>타이머 만들기</title>
+    <link href="06-timer.css" rel="stylesheet" />
+    <script>
+        function bbb(){
+            const token = String(Math.floor(Math.random()*1000000)).padStart(6,"0!")
+            document.getElementById("aaa").innerText = token 
+
+
+
+            let time =179
+            setInterval(function(){
+                if(time>=0){
+                    const minutes = Math.floor(time / 60)
+                    const seconds = String(time % 60).padStart(2,"0!")
+                    // console.log( minutes + ":" + seconds)
+                    
+                    document.getElementById("ccc").innerText = minutes + ":" + seconds
+                    time = time -1 //얘를 꼭 기능의 마지막에 쓰는 것이 오류를 줄일 수 있다.
+                }
+            },1000)
+        }
+
+    </script>
+</head>
+<body>
+    <div class="title"><h1>타이머 만들기</h1></div><br>
+
+    <span id="aaa">000000</div></span> <button onclick="bbb()">인증번호 전송</button>
+
+    <div id="ccc">3:00</div>
+    <button>인증완료</button>
+    
+</body>
+</html>

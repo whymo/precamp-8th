@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>돔(DOM) 조작하기</title> 
+    <!-- 자바스크립트로 html을 조작하기(Html과 javascript 연결) -->
+    <script>
+        function aaa(){
+            // alert("안녕하세요~~~")
+            document.getElementById("qqq").innerText = "반갑습니다."
+        } 
+        // 기능을 만들때는 ()를 꼭 써야한다. 기능은 {}에 쓰기
+        // alert은 자바스크립트에서 기본적으로 제공하는 기능이다. 알림메세지를 뜨워주는 기능이다
+        // innertext는 뒤의 내용으로 바꾸는 기능을 한다.
+
+        function counter(){
+            const temp = Number(document.getElementById("count").innerText) + 1 //0
+            document.getElementById("count").innerText = temp
+            // Number은 문자를 숫자 형태로 바꿔주는 함수이다.
+        }
+
+        function changeColor(){
+            document.getElementById("ccc").setAttribute("style", 'background-color: yellow')
+        }
+
+        function setDisabled(){
+            document.getElementById("ddd").setAttribute("disabled", "true")
+        }
+
+        // function에서 (){} 순서 까먹지 좀 마!
+
+    </script>
+</head>
+<body>
+    <div id="qqq">안녕하세요</div>
+    <button onclick="aaa()">클릭하기!!</button>
+    
+    <div id="count">0</div>
+    <button onclick="counter()">숫자 올리기!!</button>
+
+    <button id="ccc" onclick="changeColor()">색깔바꾸기</button>
+    <button id="ddd" onclick="setDisabled()">비활성화시키기</button>
+    
+</body>
+</html>
